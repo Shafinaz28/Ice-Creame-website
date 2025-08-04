@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .feature-icon {
+      transition: all 0.3s ease;
+      filter: brightness(0) invert(0.7);
+    }
+
+    .feature-box:hover .feature-icon {
+      filter: brightness(0) invert(0.5);
+      transform: scale(1.1);
+    }
+
+    .product-card {
+      transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .hover-buttons {
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .product-image:hover .hover-buttons {
+      opacity: 1;
+    }
+
+    .review-card {
+      transition: all 0.3s ease;
+    }
+
+    .review-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .slideshow-container {
+      perspective: 1000px;
+    }
+
+    .mySlides {
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+    }
+
+    .prev,
+    .next {
+      background-color: rgba(255, 255, 255, 0.7);
+      transition: all 0.3s ease;
+    }
+
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .process-step {
+      position: relative;
+      padding-left: 4rem;
+    }
+
+    .process-step:before {
+      content: "";
+      position: absolute;
+      left: 1.5rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #FF6B6B, #FFB347);
+    }
+
+    .process-step:last-child:before {
+      height: 50%;
+    }
+
+    .process-number {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background: #FF6B6B;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<!-- Header -->
+<header class="bg-white/95 fixed top-0 left-0 right-0 z-50 shadow transition-all duration-300" id="header">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center py-4 transition-all duration-300" id="header-container">
+
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="./images/Crunch Mellow Logo (Final)-01 (1).png" alt="Crunch Mellow Logo"
+          class="h-12 mr-2 transition-all duration-300">
+      </div>
+
+      <!-- Mobile Menu Button (hidden on large screens) -->
+      <button class="lg:hidden text-gray-700 text-2xl focus:outline-none hover:text-pink-600" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Nav Menu -->
+      <nav class="hidden lg:flex gap-6 justify-center text-gray-800">
+        <ul class="flex gap-6 items-center font-medium">
+          <li><a href="index.html" class="hover:text-[#ff6b6b] transition">Home</a></li>
+          <li><a href="about.html" class="hover:text-[#ff6b6b] transition">About</a></li>
+          <li><a href="product.html" class="hover:text-[#ff6b6b] transition">Products</a></li>
+          <li><a href="contact.html" class="hover:text-[#ff6b6b] transition">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Actions -->
+      <div class="hidden lg:flex items-center">
+        <button
+          class="bg-[#ff6b6b] text-white px-4 py-2 rounded-full flex items-center gap-2 hover:bg-[#e05555] shadow-md transition-all">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Cart (0)</span>
+        </button>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<body class="bg-gray-50">
+  <!-- About Us Section -->
+<section class="pt-32 pb-12 bg-white text-center" style="background-image: url('your-image-url.jpg'); background-size: cover; background-position: center;">
+  <h2 class="text-4xl font-bold text-[#ff6b6b] mb-4">About Us</h2>
+  <p class="text-gray-600 max-w-2xl mx-auto">
+    We appreciate all comments and questions! Please fill out the form below and select your subject so we can respond quickly.
+  </p>
+</section>
+
+      <section class="py-16 px-6 md:px-12 bg-white">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+
+            <!-- Image Block -->
+            <div class="relative rounded-2xl overflow-hidden shadow-xl h-full">
+              <img src="./images/aboutusimg.jpg" alt="Our Founder" class="w-full h-full object-cover rounded-2xl">
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <p class="text-white text-sm italic">"Real ingredients make real ice cream"</p>
+              </div>
+            </div>
+
+            <!-- Text Block -->
+            <div class="flex flex-col justify-between h-full">
+              <!-- Heritage -->
+              <div class="mb-8">
+                <h3 class="text-2xl font-bold text-[#FF6B6B] mb-4">Our Heritage</h3>
+                <p class="text-gray-700 mb-4">
+                  What began in 1985 as Grandma Maria's homemade ice cream recipe for her grandchildren has blossomed
+                  into
+                  a beloved local institution. Using only the finest ingredients from trusted local farmers, we've
+                  stayed
+                  true to our roots while innovating new flavors that excite the palate.
+                </p>
+                <p class="text-gray-700">
+                  Today, our small-batch ice cream is still churned the old-fashioned way, with care and attention to
+                  every
+                  scoop. We refuse to compromise on quality, which is why you'll never find artificial flavors, colors,
+                  or
+                  preservatives in our products.
+                </p>
+              </div>
+
+              <!-- Promise -->
+              <div class="mb-8">
+                <h3 class="text-2xl font-bold text-[#FF6B6B] mb-4">Our Promise</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-[#FF6B6B] mt-1 mr-3"></i>
+                    <span class="text-gray-700">100% natural ingredients from ethical sources</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-[#FF6B6B] mt-1 mr-3"></i>
+                    <span class="text-gray-700">Small-batch production for premium quality</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-[#FF6B6B] mt-1 mr-3"></i>
+                    <span class="text-gray-700">Sustainable practices that protect our planet</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check-circle text-[#FF6B6B] mt-1 mr-3"></i>
+                    <span class="text-gray-700">A portion of profits supports local food banks</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Fun Fact -->
+              <div class="bg-amber-100 border-l-4 border-[#FF6B6B] p-4 rounded-r-lg">
+                <h4 class="font-bold text-[#FF6B6B] mb-2">Fun Fact</h4>
+                <p class="text-gray-700">
+                  We use over 2,000 vanilla beans each week! Each bean is hand-selected from sustainable farms in
+                  Madagascar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Our Process Section -->
+      <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto text-center mb-16">
+            <h2 class="text-4xl font-bold text-[#FF6B6B] mb-4">Our Process</h2>
+            <p class="text-xl text-gray-600">Every scoop tells a story of craftsmanship and care</p>
+          </div>
+
+          <div class="max-w-3xl mx-auto">
+            <div class="space-y-12">
+              <!-- Step 1 -->
+              <div class="process-step">
+                <div class="process-number">1</div>
+                <div>
+                  <h3 class="text-2xl font-bold text-[#FF6B6B] mb-3">Ingredient Selection</h3>
+                  <p class="text-gray-700 mb-4">
+                    We personally visit farms to select only the freshest, highest quality ingredients. Our dairy comes
+                    from grass-fed cows within 50 miles of our creamery, and fruits are picked at peak ripeness.
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Local Sourcing</span>
+                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Seasonal Ingredients</span>
+                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Ethical Partnerships</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="process-step">
+                <div class="process-number">2</div>
+                <div>
+                  <h3 class="text-2xl font-bold text-[#FF6B6B] mb-3">Small-Batch Preparation</h3>
+                  <p class="text-gray-700 mb-4">
+                    Each batch is carefully crafted in our copper kettles, never exceeding 10 gallons to ensure perfect
+                    consistency and flavor development. Our slow-churn method preserves the natural textures.
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Handcrafted</span>
+                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Slow-Churned</span>
+                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Temperature
+                      Controlled</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="process-step">
+                <div class="process-number">3</div>
+                <div>
+                  <h3 class="text-2xl font-bold text-[#FF6B6B] mb-3">Flavor Development</h3>
+                  <p class="text-gray-700 mb-4">
+                    Our flavor lab is where science meets art. We experiment with traditional techniques and innovative
+                    combinations, testing each recipe at least 20 times before it earns a place in our lineup.
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Creative Innovation</span>
+                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Taste Testing</span>
+                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Recipe Refinement</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="process-step">
+                <div class="process-number">4</div>
+                <div>
+                  <h3 class="text-2xl font-bold text-[#FF6B6B] mb-3">Quality Control</h3>
+                  <p class="text-gray-700 mb-4">
+                    Every batch undergoes rigorous testing for texture, flavor, and purity. We maintain strict
+                    temperature
+                    controls throughout production and distribution to ensure your ice cream arrives in perfect
+                    condition.
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Microbial Testing</span>
+                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Texture Analysis</span>
+                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Cold Chain Integrity</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 5 -->
+              <div class="process-step">
+                <div class="process-number">5</div>
+                <div>
+                  <h3 class="text-2xl font-bold text-[#FF6B6B] mb-3">Serving Perfection</h3>
+                  <p class="text-gray-700 mb-4">
+                    Our trained scoop masters serve each order with care, ensuring the perfect scoop every time. We
+                    store
+                    our ice cream at precisely -12°C to maintain ideal consistency for serving.
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Temperature
+                      Precision</span>
+                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Serving Training</span>
+                    <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">Customer Experience</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-16 text-center">
+              <a href="#"
+                class="inline-block bg-[#FF6B6B] hover:bg-[#E05555] text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg">
+                Take a Virtual Tour of Our Creamery
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter Section -->
+      <section class="py-16 bg-amber-50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#ff6b6b] mb-4">Join Our Sweet Community</h2>
+          <p class="text-gray-700 mb-8">
+            Subscribe to our newsletter and be the first to know about new flavors, special offers, and exclusive deals!
+          </p>
+
+          <form class="flex flex-col sm:flex-row items-center max-w-xl mx-auto">
+            <input type="email" required placeholder="Your email address"
+              class="flex-grow w-full px-4 py-3 rounded-lg sm:rounded-r-none border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ff6b6b] mb-4 sm:mb-0">
+            <button type="submit"
+              class="bg-[#ff6b6b] hover:bg-[#e85959] text-white font-semibold px-6 py-3 rounded-lg sm:rounded-l-none transition duration-300">
+              Subscribe
+            </button>
+          </form>
+
+          <p class="text-sm text-[#ff6b6b] mt-4">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+      </section>
+
+      <!-- Footer Section -->
+      <footer class="bg-gray-900 text-white pt-16 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+            <!-- Contact Info -->
+            <div>
+              <h3 class="text-lg font-bold text-[#ff6b6b] mb-4">Contact Us</h3>
+              <address class="not-italic space-y-2 text-sm text-gray-300">
+                <p>123 Ice Cream Lane</p>
+                <p>Sweetville, SV 12345</p>
+                <p>United States</p>
+              </address>
+              <p class="mt-4 text-sm"><i class="fas fa-phone-alt mr-2 text-[#ff6b6b]"></i> (123) 456-7890</p>
+              <p class="text-sm"><i class="fas fa-envelope mr-2 text-[#ff6b6b]"></i> info@vanilladelight.com</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+              <h3 class="text-lg font-bold text-[#ff6b6b] mb-4">Quick Links</h3>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li><a href="#" class="hover:text-[#ff6b6b] transition">About Us</a></li>
+                <li><a href="#" class="hover:text-[#ff6b6b] transition">Our Flavors</a></li>
+                <li><a href="#" class="hover:text-[#ff6b6b] transition">Find a Store</a></li>
+                <li><a href="#" class="hover:text-[#ff6b6b] transition">Careers</a></li>
+                <li><a href="#" class="hover:text-[#ff6b6b] transition">FAQ</a></li>
+              </ul>
+            </div>
+
+            <!-- Store Hours -->
+            <div>
+              <h3 class="text-lg font-bold text-[#ff6b6b] mb-4">Store Hours</h3>
+              <ul class="space-y-2 text-sm text-gray-300">
+                <li class="flex justify-between"><span>Mon - Fri</span> <span>10AM - 9PM</span></li>
+                <li class="flex justify-between"><span>Saturday</span> <span>9AM - 10PM</span></li>
+                <li class="flex justify-between"><span>Sunday</span> <span>11AM - 8PM</span></li>
+              </ul>
+              <div class="mt-4 text-sm text-gray-400">
+                <strong>Holiday Hours:</strong><br>
+                Closed on Thanksgiving, Christmas, and New Year's Day
+              </div>
+            </div>
+
+            <!-- Social & Payments -->
+            <div>
+              <h3 class="text-lg font-bold text-[#ff6b6b] mb-4">Follow Us</h3>
+              <div class="flex space-x-3 mb-6">
+                <a href="#"
+                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-[#ff6b6b] transition"><i
+                    class="fab fa-facebook-f"></i></a>
+                <a href="#"
+                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-[#ff6b6b] transition"><i
+                    class="fab fa-instagram"></i></a>
+                <a href="#"
+                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-[#ff6b6b] transition"><i
+                    class="fab fa-twitter"></i></a>
+                <a href="#"
+                  class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-[#ff6b6b] transition"><i
+                    class="fab fa-pinterest-p"></i></a>
+              </div>
+
+              <h4 class="font-semibold text-[#ff6b6b] mb-2">Payment Methods</h4>
+              <div class="flex space-x-2">
+                <div class="w-10 h-6 bg-gray-800 flex items-center justify-center rounded"><i
+                    class="fab fa-cc-visa"></i></div>
+                <div class="w-10 h-6 bg-gray-800 flex items-center justify-center rounded"><i
+                    class="fab fa-cc-mastercard"></i></div>
+                <div class="w-10 h-6 bg-gray-800 flex items-center justify-center rounded"><i
+                    class="fab fa-cc-amex"></i></div>
+                <div class="w-10 h-6 bg-gray-800 flex items-center justify-center rounded"><i
+                    class="fab fa-cc-paypal"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer Bottom -->
+          <div class="border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
+            <p>&copy; 2023 Vanilla Delight Ice Cream. All rights reserved.</p>
+            <div class="mt-2 space-x-4">
+              <a href="#" class="hover:text-amber-400 transition">Privacy Policy</a>
+              <a href="#" class="hover:text-amber-400 transition">Terms of Service</a>
+              <a href="#" class="hover:text-amber-400 transition">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          if (n > slides.length) { slideIndex = 1 }
+          if (n < 1) { slideIndex = slides.length }
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slides[slideIndex - 1].style.display = "block";
+        }
+
+        // Auto slide change every 5 seconds
+        setInterval(() => {
+          plusSlides(1);
+        }, 5000);
+      </script>
+</body>
+
+</html>

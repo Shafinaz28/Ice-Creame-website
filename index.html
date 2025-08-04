@@ -1,0 +1,2093 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crunch Mellow - Premium Ice Cream Experience</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --primary: #FF6B6B;
+      --secondary: #4ECDC4;
+      --accent: #FFD166;
+      --dark: #2D3436;
+      --light: #F9F9F9;
+      --text: #333333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background-color: var(--light);
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    .container {
+      margin: auto;
+    }
+
+    /* Animation Classes */
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-float-delay-1 {
+      animation: float 6s ease-in-out infinite 1s;
+    }
+
+    .animate-float-delay-2 {
+      animation: float 6s ease-in-out infinite 2s;
+    }
+
+    .animate-pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .animate-bounce {
+      animation: bounce 2s ease infinite;
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 1s ease-in forwards;
+    }
+
+    .animate-slide-up {
+      animation: slideUp 0.8s ease-out forwards;
+    }
+
+    .animate-scale-in {
+      animation: scaleIn 0.6s ease-out forwards;
+    }
+
+    .animate-rotate {
+      animation: rotate 12s linear infinite;
+    }
+
+    .animate-shake {
+      animation: shake 0.5s ease-in-out;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      10%,
+      30%,
+      50%,
+      70%,
+      90% {
+        transform: translateX(-5px);
+      }
+
+      20%,
+      40%,
+      60%,
+      80% {
+        transform: translateX(5px);
+      }
+    }
+
+
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      text-align: center;
+      color: white;
+      max-width: 800px;
+      padding: 0 20px;
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeInDown 1.2s;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      font-weight: 300;
+      animation: fadeInUp 1.4s;
+    }
+
+    .hero-btns {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      animation: fadeInUp 1.6s;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+      border: 2px solid var(--primary);
+    }
+
+    .btn-primary:hover {
+      background-color: transparent;
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-secondary:hover {
+      background-color: white;
+      color: var(--text);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Featured Flavors Section */
+    .featured {
+      padding: 100px 0;
+      background-color: #f8f9fa;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--text);
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary);
+    }
+
+    .flavors-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .flavor-card {
+      background-color: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .flavor-card.animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .flavor-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .flavor-image {
+      height: 300px;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .flavor-card:hover .flavor-image {
+      transform: scale(1.1);
+    }
+
+    .flavor-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flavor-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .flavor-desc {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+
+    .flavor-price {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .flavor-rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .flavor-rating i {
+      color: var(--accent);
+      margin-right: 5px;
+    }
+
+    .flavor-rating span {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .add-to-cart {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .add-to-cart:hover {
+      background-color: #ff5252;
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+    }
+
+    .add-to-cart i {
+      margin-right: 8px;
+    }
+
+    /* Manufacturing Process */
+    .manufacturing {
+      padding: 100px 0;
+      background-color: white;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 30px;
+      border-radius: 15px;
+      background-color: var(--light);
+      transition: all 0.3s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .process-step.animated {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .process-step:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .process-step::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+    }
+
+    .step-number {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: var(--primary);
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .process-step:hover .step-number {
+      transform: scale(1.2);
+      background-color: var(--secondary);
+    }
+
+    .step-icon {
+      width: 70px;
+      height: 70px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      margin: 20px auto;
+      transition: all 0.3s;
+    }
+
+    .process-step:hover .step-icon {
+      transform: rotate(15deg) scale(1.1);
+    }
+
+    .process-step:nth-child(2) .step-icon {
+      background-color: var(--secondary);
+    }
+
+    .process-step:nth-child(3) .step-icon {
+      background-color: var(--accent);
+    }
+
+    .process-step:nth-child(4) .step-icon {
+      background-color: #6c5ce7;
+    }
+
+    .step-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .step-desc {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .ingredient-card {
+      min-width: 300px;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .ingredient-card img {
+      width: 100px;
+      margin-bottom: 10px;
+    }
+
+    .nav-btn {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .nav-btn:hover {
+      background: #f0f0f0;
+    }
+
+    /* Testimonials Section - Horizontal */
+    .testimonials {
+      padding: 100px 0;
+      background-color: #f8f9fa;
+      overflow: hidden;
+    }
+
+    .testimonial-container {
+      width: 100%;
+      position: relative;
+    }
+
+    .testimonial-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: 300%;
+    }
+
+    .testimonial-card {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      margin: 0 15px;
+      transition: all 0.3s;
+      flex: 0 0 calc(33.333% - 30px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      opacity: 0.7;
+      transform: scale(0.9);
+    }
+
+    .testimonial-card.active {
+      opacity: 1;
+      transform: scale(1);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial-content {
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .testimonial-content::before,
+    .testimonial-content::after {
+      content: '"';
+      font-size: 4rem;
+      color: var(--primary);
+      opacity: 0.2;
+      position: absolute;
+    }
+
+    .testimonial-content::before {
+      top: -30px;
+      left: -20px;
+    }
+
+    .testimonial-content::after {
+      bottom: -50px;
+      right: -20px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .testimonial-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      object-fit: cover;
+      border: 3px solid var(--primary);
+    }
+
+    .testimonial-name {
+      font-weight: 600;
+    }
+
+    .testimonial-role {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .testimonial-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .testimonial-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #ddd;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .testimonial-dot.active {
+      background-color: var(--primary);
+      transform: scale(1.2);
+    }
+
+    .testimonial-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s;
+      z-index: 10;
+    }
+
+    .testimonial-btn:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .testimonial-prev {
+      left: 20px;
+    }
+
+    .testimonial-next {
+      right: 20px;
+    }
+
+    /* FAQ Section */
+    .faq {
+      padding: 100px 0;
+      background-color: white;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background-color: var(--light);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      overflow: hidden;
+    }
+
+    .faq-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .faq-question i {
+      color: var(--primary);
+      transition: all 0.3s;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      margin-top: 15px;
+      color: #666;
+      line-height: 1.6;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.5s ease;
+      opacity: 0;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      opacity: 1;
+      padding-top: 15px;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 100px 0;
+      background-color: var(--light);
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      transition: all 0.3s;
+    }
+
+    .contact-item:hover {
+      transform: translateX(10px);
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-right: 15px;
+      flex-shrink: 0;
+      transition: all 0.3s;
+    }
+
+    .contact-item:hover .contact-icon {
+      background-color: var(--secondary);
+      transform: rotate(15deg);
+    }
+
+    .contact-details h4 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .contact-details p {
+      color: #666;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: all 0.3s;
+    }
+
+    .social-link:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-3px) scale(1.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+    }
+
+    .contact-form:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s;
+    }
+
+    .form-input:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+    }
+
+    textarea.form-input {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background-color: #ff5252;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 80px 0 30px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+
+      
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: var(--primary);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      transform: translateX(5px);
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    .footer-contact-icon {
+      margin-right: 10px;
+      color: var(--primary);
+    }
+
+    .footer-contact-text {
+      color: #ccc;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #333;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    /* Back to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--primary);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      opacity: 0;
+      visibility: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #backToTop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #backToTop:hover {
+      background-color: var(--secondary);
+      transform: translateY(-5px) scale(1.1);
+    }
+
+    /* Ice Cream Scoop Animation */
+    .ice-cream-scoop {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #fff, #f5f5f5);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      opacity: 0;
+    }
+
+    .scoop-1 {
+      top: 10%;
+      left: 10%;
+      animation: float 8s ease-in-out infinite, fadeIn 1s ease-in forwards;
+    }
+
+    .scoop-2 {
+      top: 20%;
+      right: 15%;
+      animation: float 7s ease-in-out infinite 1s, fadeIn 1s ease-in forwards;
+    }
+
+    .scoop-3 {
+      bottom: 15%;
+      left: 20%;
+      animation: float 9s ease-in-out infinite 2s, fadeIn 1s ease-in forwards;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .flavors-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-card {
+        flex: 0 0 calc(50% - 30px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        padding: 15px 0;
+      }
+
+      nav ul {
+        margin: 15px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0 10px;
+      }
+
+      .hero {
+        height: auto;
+        padding: 150px 0 60px;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .flavors-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-card {
+        flex: 0 0 calc(100% - 30px);
+      }
+
+      .testimonial-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- Header -->
+
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white/95 fixed top-0 left-0 right-0 z-50 shadow transition-all duration-300" id="header">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-center py-4 transition-all duration-300" id="header-container">
+
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img src="./images/Crunch Mellow Logo (Final)-01 (1).png" alt="Crunch Mellow Logo"
+              class="h-12 mr-2 transition-all duration-300">
+          </div>
+
+          <!-- Mobile Menu Button (hidden on large screens) -->
+          <button class="lg:hidden text-gray-700 text-2xl focus:outline-none hover:text-pink-600" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Nav Menu -->
+        <nav class="hidden lg:flex gap-6 justify-center text-gray-800">
+  <ul class="flex gap-6 items-center font-medium">
+    <li><a href="index.html" class="hover:text-[#ff6b6b] transition">Home</a></li>
+    <li><a href="about.html" class="hover:text-[#ff6b6b] transition">About</a></li>
+    <li><a href="product.html" class="hover:text-[#ff6b6b] transition">Products</a></li>
+    <li><a href="contact.html" class="hover:text-[#ff6b6b] transition">Contact</a></li>
+  </ul>
+</nav>
+
+
+          <!-- Actions -->
+          <div class="hidden lg:flex items-center">
+            <button
+              class="bg-[#ff6b6b] text-white px-4 py-2 rounded-full flex items-center gap-2 hover:bg-[#e05555] shadow-md transition-all">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Cart (0)</span>
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <!-- Floating ice cream scoops -->
+      <div class="ice-cream-scoop scoop-1" style="background: linear-gradient(145deg, #FF6B6B, #ff8f8f);"></div>
+      <div class="ice-cream-scoop scoop-2" style="background: linear-gradient(145deg, #4ECDC4, #7ad8d1);"></div>
+      <div class="ice-cream-scoop scoop-3" style="background: linear-gradient(145deg, #FFD166, #ffde8a);"></div>
+
+      <div class="hero-content">
+        <h1 class="hero-title animate-slide-up">Experience the Art of Premium Ice Cream</h1>
+        <p class="hero-subtitle animate-slide-up" style="animation-delay: 0.2s">Handcrafted with love, using the finest
+          ingredients from around the world</p>
+        <div class="hero-btns animate-slide-up" style="animation-delay: 0.4s">
+          <a href="#featured" class="btn btn-primary animate-pulse">Explore Flavors</a>
+          <a href="#contact" class="btn btn-secondary">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Flavors Section -->
+    <section class="featured" id="featured">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="animate-fade-in">Our Flavors</h2>
+        </div>
+
+        <div class="flavors-grid">
+          <!-- Flavor 1 -->
+          <div class="flavor-card">
+            <img src="./images/Vanilla.jpg" alt="Vanilla Bean Ice Cream" class="flavor-image">
+            <div class="flavor-content">
+              <h3 class="flavor-title">Vanilla Bean Dreams</h3>
+              <p class="flavor-desc">Rich and creamy vanilla ice cream made with real Madagascar vanilla beans</p>
+              <div class="flavor-price">$4.99</div>
+              <div class="flavor-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(128 reviews)</span>
+              </div>
+              <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+          <!-- Flavor 2 -->
+          <div class="flavor-card">
+            <img src="./images/Strawberray.jpg" alt="Mint Ice Cream" class="flavor-image">
+            <div class="flavor-content">
+              <h3 class="flavor-title">Strawberray</h3>
+              <p class="flavor-desc">Sweet strawberry ice cream with chunks of fresh strawberries</p>
+              <div class="flavor-price">$5.99</div>
+              <div class="flavor-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(84 reviews)</span>
+              </div>
+              <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+          <!-- Flavor 3 -->
+          <div class="flavor-card">
+            <img src="./images/Butterscotch.jpg" alt="Butterscotch Ice Cream" class="flavor-image">
+            <div class="flavor-content">
+              <h3 class="flavor-title">Butterscotch</h3>
+              <p class="flavor-desc">Decadent dark chocolate ice cream with Belgian chocolate shavings</p>
+              <div class="flavor-price">$5.49</div>
+              <div class="flavor-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(96 reviews)</span>
+              </div>
+              <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Flavor 4 -->
+          <div class="flavor-card">
+            <img src="./images/Belgium Chocalate.jpg" alt="Chocolate Ice Cream" class="flavor-image">
+            <div class="flavor-content">
+              <h3 class="flavor-title">Belgium Chocolate </h3>
+              <p class="flavor-desc">Chocolate is the sweetest letter of love written in flavor</p>
+              <div class="flavor-price">$5.99</div>
+              <div class="flavor-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(112 reviews)</span>
+              </div>
+              <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+
+
+
+          <!-- Flavor 5 -->
+          <div class="flavor-card">
+            <img src="./images/Cotton candy.jpg" alt="Coffee Ice Cream" class="flavor-image">
+            <div class="flavor-content">
+              <h3 class="flavor-title">Cotton Candy</h3>
+              <p class="flavor-desc">Cotton candy is a fluffy cloud of sweetness that melts like a dream</p>
+              <div class="flavor-price">$6.49</div>
+              <div class="flavor-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(76 reviews)</span>
+              </div>
+              <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Flavor 6 -->
+          <div class="flavor-card">
+            <img src="./images/Oreo.jpg" alt="Cookie Ice Cream" class="flavor-image">
+            <div class="flavor-content">
+              <h3 class="flavor-title">Oreo</h3>
+              <p class="flavor-desc">Oreo is a crunchy hug with a creamy heart</p>
+              <div class="flavor-price">$6.49</div>
+              <div class="flavor-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(92 reviews)</span>
+              </div>
+              <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Flavor 7 -->
+          <div class="flavor-card">
+            <img src="./images/Pista.jpg" alt="Caramel Ice Cream" class="flavor-image">
+            <div class="flavor-content">
+              <h3 class="flavor-title">Pistachio</h3>
+              <p class="flavor-desc">Pistachio is a nutty whisper of creamy delight</p>
+              <div class="flavor-price">$6.29</div>
+              <div class="flavor-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(88 reviews)</span>
+              </div>
+              <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Flavor 8 -->
+          <div class="flavor-card">
+            <img src="./images/Mango.jpg" alt="Butter Pecan Ice Cream" class="flavor-image">
+            <div class="flavor-content">
+              <h3 class="flavor-title">Mango</h3>
+              <p class="flavor-desc">Mango is the golden kiss of summer sweetness</p>
+              <div class="flavor-price">$6.79</div>
+              <div class="flavor-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(82 reviews)</span>
+              </div>
+              <button class="add-to-cart"><i class="fas fa-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: PRODUCT FEATURES -->
+
+    <section style="background-color: #e65858; padding: 60px 20px; min-height: 300px;">
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px;">
+
+        <!-- Feature Block -->
+        <div style="text-align: center; width: 120px; display: flex; flex-direction: column; align-items: center;">
+          <img src="./images/plant-icon.png" alt="Plant Based"
+            style="width: 80px; height: 80px; filter: brightness(0) invert(1);">
+          <p style="color: #fff; font-weight: bold; font-size: 14px; margin-top: 10px;">PLANT BASED</p>
+        </div>
+
+        <div style="text-align: center; width: 120px; display: flex; flex-direction: column; align-items: center;">
+          <img src="./images/gluten-icon.png" alt="Gluten Free"
+            style="width: 80px; height: 80px; filter: brightness(0) invert(1);">
+          <p style="color: #fff; font-weight: bold; font-size: 14px; margin-top: 10px;">GLUTEN FREE</p>
+        </div>
+
+        <div style="text-align: center; width: 120px; display: flex; flex-direction: column; align-items: center;">
+          <img src="./images/sugarfree-icon.png" alt="No Sugar Added"
+            style="width: 80px; height: 80px; filter: brightness(0) invert(1);">
+          <p style="color: #fff; font-weight: bold; font-size: 14px; margin-top: 10px;">NO SUGAR ADDED</p>
+        </div>
+
+        <div style="text-align: center; width: 120px; display: flex; flex-direction: column; align-items: center;">
+          <img src="./images/organic-icon.png" alt="100% Organic"
+            style="width: 80px; height: 80px; filter: brightness(0) invert(1);">
+          <p style="color: #fff; font-weight: bold; font-size: 14px; margin-top: 10px;">100% ORGANIC</p>
+        </div>
+
+        <div style="text-align: center; width: 120px; display: flex; flex-direction: column; align-items: center;">
+          <img src="./images/ayurveda-icon.png" alt="Ayurvedic"
+            style="width: 80px; height: 80px; filter: brightness(0) invert(1);">
+          <p style="color: #fff; font-weight: bold; font-size: 14px; margin-top: 10px;">AYURVEDIC INGREDIENTS</p>
+        </div>
+
+        <div style="text-align: center; width: 120px; display: flex; flex-direction: column; align-items: center;">
+          <img src="./images/natural-flavour-icon.png" alt="No Artificial Flavour"
+            style="width: 80px; height: 80px; filter: brightness(0) invert(1);">
+          <p style="color: #fff; font-weight: bold; font-size: 14px; margin-top: 10px;">NO ARTIFICIAL FLAVOURS</p>
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+    <section class="px-6 py-12 bg-white relative">
+      <div class="flex items-center justify-between">
+        <h2 class="text-3xl font-bold text-gray-900 ">Our Natural Ingredients</h2>
+        <div class="flex space-x-2">
+          <button id="prevBtn" class="w-10 h-10 rounded-full border flex items-center justify-center hover:bg-gray-100">
+            ←
+          </button>
+          <button id="nextBtn" class="w-10 h-10 rounded-full border flex items-center justify-center hover:bg-gray-100">
+            →
+          </button>
+        </div>
+      </div>
+
+      <!-- Slider Container -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-6 bg-white">
+        <!-- Card -->
+        <div class="bg-green-50 rounded-lg p-6 text-center shadow">
+          <div class="flex justify-center mb-4">
+            <div class="bg-green-200 rounded-full p-6">
+              <img src="./images/vanilla icon.png" alt="Vanilla" class="w-23 h-23 object-contain" />
+            </div>
+          </div>
+          <h2 class="text-xl font-semibold text-black">Vanilla</h2>
+          <p class="text-gray-600 mt-2">Bourbon vanilla berries imported directly from...</p>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-rose-50 rounded-lg p-6 text-center shadow">
+          <div class="flex justify-center mb-4">
+            <div class="bg-rose-200 rounded-full p-6">
+              <img src="./images/chocolate-icon.png" alt="Chocolate" class="w-23 h-23 object-contain" />
+            </div>
+          </div>
+          <h2 class="text-xl font-semibold text-black">Chocolate</h2>
+          <p class="text-gray-600 mt-2">We are Valrhona partners and use selections of Single...</p>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-indigo-50 rounded-lg p-6 text-center shadow">
+          <div class="flex justify-center mb-4">
+            <div class="bg-indigo-200 rounded-full p-6">
+              <img src="./images/milk-icon.png" alt="Milk" class="w-23 h-23 object-contain" />
+            </div>
+          </div>
+          <h2 class="text-xl font-semibold text-black">Milk</h2>
+          <p class="text-gray-600 mt-2">Milk from the Fucci farm of Conselice. From Jersey cows...</p>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-orange-50 rounded-lg p-6 text-center shadow">
+          <div class="flex justify-center mb-4">
+            <div class="bg-orange-200 rounded-full p-6">
+              <img src="./images/maca-icon.png" alt="Maca" class="w-23 h-23 object-contain" />
+            </div>
+          </div>
+          <h2 class="text-xl font-semibold text-black">Maca</h2>
+          <p class="text-gray-600 mt-2">This Andean root balances hormones, reduces stress and...</p>
+        </div>
+      </div>
+
+
+    </section>
+
+    <script>
+      const slider = document.getElementById("slider");
+      let scrollAmount = 0;
+
+      document.getElementById("nextBtn").onclick = () => {
+        slider.scrollBy({ left: 320, behavior: "smooth" });
+      };
+
+      document.getElementById("prevBtn").onclick = () => {
+        slider.scrollBy({ left: -320, behavior: "smooth" });
+      };
+    </script>
+
+
+    <!-- Manufacturing Process -->
+    <section class="manufacturing" id="process">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="animate-fade-in">Our Manufacturing Process</h2>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <div class="step-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h3 class="step-title">Sourcing Premium Ingredients</h3>
+            <p class="step-desc">We source only the finest ingredients from trusted suppliers, ensuring the highest
+              quality for your ice cream.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <div class="step-icon">
+              <i class="fas fa-blender"></i>
+            </div>
+            <h3 class="step-title">Precision Mixing</h3>
+            <p class="step-desc">Our state-of-the-art mixing facilities ensure perfect consistency and texture in every
+              batch.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <div class="step-icon">
+              <i class="fas fa-temperature-low"></i>
+            </div>
+            <h3 class="step-title">Advanced Freezing</h3>
+            <p class="step-desc">Using cutting-edge freezing technology to create the perfect creamy texture that
+              customers love.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <div class="step-icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h3 class="step-title">Quality Delivery</h3>
+            <p class="step-desc">Our cold chain logistics ensure your ice cream arrives in perfect condition, ready to
+              delight your customers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section - Horizontal -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="animate-fade-in">Customer Testimonials</h2>
+        </div>
+
+        <div class="testimonial-container">
+          <button class="testimonial-btn testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+          <button class="testimonial-btn testimonial-next"><i class="fas fa-chevron-right"></i></button>
+
+          <div class="testimonial-track">
+            <div class="testimonial-card active">
+              <div class="testimonial-content">
+                Crunch Mellow ice cream is absolutely amazing! The quality is exceptional and the flavors are so
+                authentic. My customers love the seasonal specials and always ask when the next one is coming.
+              </div>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer" class="testimonial-avatar">
+                <h4>Sarah Johnson</h4>
+                <p class="testimonial-role">Owner, Sweet Dreams Café</p>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                As a catering business, consistency is key. Crunch Mellow has never let us down. Their delivery is
+                always
+                on time and the ice cream is perfectly packed. Highly recommend!
+              </div>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="testimonial-avatar">
+                <h4>Michael Rodriguez</h4>
+                <p class="testimonial-role">Chef, Gourmet Events</p>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                The vanilla bean ice cream is the best I've ever tasted! My kids beg for it every week. Worth every
+                penny
+                for the quality and taste.
+              </div>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="testimonial-avatar">
+                <h4>Emily Chen</h4>
+                <p class="testimonial-role">Regular Customer</p>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                The pistachio flavor is incredible - so rich and nutty! I serve it at my restaurant and customers can't
+                get enough. The texture is perfect every time.
+              </div>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Customer" class="testimonial-avatar">
+                <h4>David Wilson</h4>
+                <p class="testimonial-role">Restaurant Owner</p>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                I've tried many premium ice creams, but Crunch Mellow stands out for its creamy texture and intense
+                flavors. The mango is like eating fresh fruit!
+              </div>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Customer" class="testimonial-avatar">
+                <h4>Jessica Lee</h4>
+                <p class="testimonial-role">Food Blogger</p>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                Our wedding guests are still talking about the custom ice cream bar we had with Crunch Mellow. The
+                service
+                was impeccable and the flavors were a huge hit!
+              </div>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Customer" class="testimonial-avatar">
+                <h4>Amanda Smith</h4>
+                <p class="testimonial-role">Bride</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="animate-fade-in">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What is the minimum order quantity?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Our MOQ varies depending on the product type, but typically starts at 100 units. For custom
+                formulations
+                or private label orders, we can discuss minimums based on your specific requirements.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do you offer private labeling or custom branding?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! We provide private labeling and full custom branding options tailored to your needs. This includes
+                custom packaging design, logo placement, and even custom flavor development for your brand.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How do you ensure cold-chain delivery?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We use insulated packaging and temperature-controlled vehicles to maintain cold-chain integrity. Our
+                logistics partners are specially trained in handling frozen products, and we monitor temperatures
+                throughout the delivery process.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What are your packaging sizes?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We offer a range of packaging options from 250g pouches to 5kg bulk packs depending on the product. Our
+                most popular sizes for businesses are 1L and 5L tubs, which are easy to store and serve from.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Are your products suitable for vegetarians?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, all our ice creams are vegetarian-friendly. We also offer a range of vegan options made with
+                plant-based milks and natural ingredients.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How long can I store your ice cream?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Our ice creams have a shelf life of 12 months when stored at -18°C or below. Once opened, we recommend
+                consuming within 2 weeks for best quality.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2 class="animate-fade-in">Get In Touch</h2>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Our Location</h4>
+                <p>123 Sweet Street, Ice Cream City, IC 12345</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Call Us</h4>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Email Us</h4>
+                <p>info@crunchmellow.com</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Opening Hours</h4>
+                <p>Monday - Friday: 10am - 9pm<br>
+                  Saturday - Sunday: 9am - 10pm</p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" id="name" class="form-input" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" class="form-input" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" id="phone" class="form-input" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea id="message" class="form-input" required></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Newsletter -->
+  <section class="py-16 bg-amber-50">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-[#ff6b6b] mb-4">Join Our Sweet Community</h2>
+      <p class="text-gray-700 max-w-2xl mx-auto mb-8">
+        Subscribe to our newsletter and be the first to know about new flavors, special offers, and exclusive deals!
+      </p>
+      <div class="max-w-md mx-auto flex">
+        <input type="email" placeholder="Your email address"
+          class="flex-grow px-4 py-3 rounded-l-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500">
+        <button
+          class="bg-[#ff6b6b] hover:bg-[#ff6b6b] text-white font-bold py-3 px-6 rounded-r-lg transition duration-300">
+          Subscribe
+        </button>
+      </div>
+      <p class="text-[#ff6b6b] text-sm mt-4">We respect your privacy. Unsubscribe at any time.</p>
+    </div>
+  </section>
+ <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Contact -->
+        <div>
+          <h3 class="text-xl font-bold text-[#ff6b6b] mb-4">Contact Us</h3>
+          <address class="not-italic mb-4">
+            <p class="mb-2">123 Ice Cream Lane</p>
+            <p class="mb-2">Sweetville, SV 12345</p>
+            <p class="mb-2">United States</p>
+          </address>
+          <p class="mb-2"><i class="fas fa-phone-alt mr-2 text-[#ff6b6b]"></i> (123) 456-7890</p>
+          <p class="mb-2"><i class="fas fa-envelope mr-2 text-[#ff6b6b]"></i> info@vanilladelight.com</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-xl font-bold text-[#ff6b6b] mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-[#ff6b6b] transition duration-300"><i
+                  class="fas fa-chevron-right mr-2 text-xs text-[#ff6b6b]"></i> About Us</a></li>
+            <li><a href="#" class="hover:text-[#ff6b6b]transition duration-300"><i
+                  class="fas fa-chevron-right mr-2 text-xs text-[#ff6b6b]"></i> Our Flavors</a></li>
+            <li><a href="#" class="hover:text-[#ff6b6b] transition duration-300"><i
+                  class="fas fa-chevron-right mr-2 text-xs text-[#ff6b6b]"></i> Find a Store</a></li>
+            <li><a href="#" class="hover:text-[#ff6b6b] transition duration-300"><i
+                  class="fas fa-chevron-right mr-2 text-xs text-[#ff6b6b]"></i> Careers</a></li>
+            <li><a href="#" class="hover:text-[#ff6b6b] transition duration-300"><i
+                  class="fas fa-chevron-right mr-2 text-xs text-[#ff6b6b]"></i> FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Hours -->
+        <div>
+          <h3 class="text-xl font-bold text-[#ff6b6b] mb-4">Store Hours</h3>
+          <ul class="space-y-2">
+            <li class="flex justify-between"><span>Monday - Friday</span> <span>10AM - 9PM</span></li>
+            <li class="flex justify-between"><span>Saturday</span> <span>9AM - 10PM</span></li>
+            <li class="flex justify-between"><span>Sunday</span> <span>11AM - 8PM</span></li>
+          </ul>
+          <div class="mt-6">
+            <h4 class="font-bold mb-2">Holiday Hours</h4>
+            <p class="text-sm">Closed on Thanksgiving, Christmas, and New Year's Day</p>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <h3 class="text-xl font-bold text-[#ff6b6b] mb-4">Follow Us</h3>
+          <div class="flex space-x-4 mb-6">
+             <a href="#"
+              class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#ff6b6b] transition duration-300">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#ff6b6b] transition duration-300">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#ff6b6b] transition duration-300">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#"
+              class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#ff6b6b] transition duration-300">
+              <i class="fab fa-pinterest-p"></i>
+            </a>
+          </div>
+          <h4 class="font-bold text-[#ff6b6b] mb-2">Payment Methods</h4>
+          <div class="flex space-x-2">
+            <div class="w-10 h-6 bg-gray-800 rounded flex items-center justify-center">
+              <i class="fab fa-cc-visa"></i>
+            </div>
+            <div class="w-10 h-6 bg-gray-800 rounded flex items-center justify-center">
+              <i class="fab fa-cc-mastercard"></i>
+            </div>
+            <div class="w-10 h-6 bg-gray-800 rounded flex items-center justify-center">
+              <i class="fab fa-cc-amex"></i>
+            </div>
+            <div class="w-10 h-6 bg-gray-800 rounded flex items-center justify-center">
+              <i class="fab fa-cc-paypal"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2023 Vanilla Delight Ice Cream. All rights reserved.</p>
+        <div class="mt-2 space-x-4">
+          <a href="#" class="hover:text-amber-400 transition duration-300">Privacy Policy</a>
+          <a href="#" class="hover:text-amber-400 transition duration-300">Terms of Service</a>
+          <a href="#" class="hover:text-amber-400 transition duration-300">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const navMenu = document.getElementById('navMenu');
+
+      mobileMenuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+      });
+
+      // Header Scroll Effect
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      // Smooth Scrolling
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+
+            // Close mobile menu if open
+            if (navMenu.classList.contains('show')) {
+              navMenu.classList.remove('show');
+            }
+          }
+        });
+      });
+
+      // Horizontal Testimonials
+      const testimonialTrack = document.querySelector('.testimonial-track');
+      const testimonialCards = document.querySelectorAll('.testimonial-card');
+      const testimonialDots = document.querySelectorAll('.testimonial-dot');
+      const prevBtn = document.querySelector('.testimonial-prev');
+      const nextBtn = document.querySelector('.testimonial-next');
+      let currentIndex = 0;
+      const cardWidth = testimonialCards[0].offsetWidth + 30; // width + margin
+
+      function updateTestimonials() {
+        testimonialTrack.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+        // Update active card and dots
+        testimonialCards.forEach((card, index) => {
+          card.classList.toggle('active', index === currentIndex);
+        });
+
+        testimonialDots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+      }
+
+      // Navigation buttons
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % testimonialCards.length;
+        updateTestimonials();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + testimonialCards.length) % testimonialCards.length;
+        updateTestimonials();
+      });
+
+      // Dot navigation
+      testimonialDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentIndex = index;
+          updateTestimonials();
+        });
+      });
+
+      // Auto rotate testimonials
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % testimonialCards.length;
+        updateTestimonials();
+      }, 5000);
+
+      // FAQ Toggle
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          item.classList.toggle('active');
+        });
+      });
+
+      // Form Submission
+      const contactForm = document.getElementById('contactForm');
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Simple form validation
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        if (!name || !email || !message) {
+          alert('Please fill in all required fields');
+          return;
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          alert('Please enter a valid email address');
+          return;
+        }
+
+        // Form submitted successfully
+        alert('Thank you for your message! We will get back to you soon.');
+        contactForm.reset();
+      });
+
+      // Add to Cart Functionality
+      const addToCartButtons = document.querySelectorAll('.add-to-cart');
+      const cartBtn = document.querySelector('.cart-btn span');
+      let cartCount = 0;
+
+      addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          cartCount++;
+          cartBtn.textContent = `Cart (${cartCount})`;
+
+          // Show a small notification
+          const notification = document.createElement('div');
+          notification.style.position = 'fixed';
+          notification.style.bottom = '20px';
+          notification.style.left = '50%';
+          notification.style.transform = 'translateX(-50%)';
+          notification.style.backgroundColor = 'var(--primary)';
+          notification.style.color = 'white';
+          notification.style.padding = '10px 20px';
+          notification.style.borderRadius = '50px';
+          notification.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+          notification.style.zIndex = '1000';
+          notification.textContent = 'Added to cart!';
+
+          // Add animation class
+          notification.classList.add('animate-slide-up');
+
+          document.body.appendChild(notification);
+
+          // Remove notification after 3 seconds
+          setTimeout(() => {
+            notification.style.opacity = '0';
+            notification.style.transition = 'opacity 0.5s';
+            setTimeout(() => {
+              document.body.removeChild(notification);
+            }, 500);
+          }, 3000);
+        });
+      });
+
+      // Back to Top Button
+      const backToTopBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.classList.add('active');
+        } else {
+          backToTopBtn.classList.remove('active');
+        }
+      });
+
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      // Scroll Animation
+      function animateOnScroll() {
+        const elements = document.querySelectorAll('.flavor-card, .process-step');
+        const windowHeight = window.innerHeight;
+
+        elements.forEach(element => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const elementVisible = 150;
+
+          if (elementPosition < windowHeight - elementVisible) {
+            element.classList.add('animated');
+          }
+        });
+      }
+
+      // Initialize animations
+      window.addEventListener('load', animateOnScroll);
+      window.addEventListener('scroll', animateOnScroll);
+
+      // Animate hero elements
+      document.querySelectorAll('.hero-title, .hero-subtitle, .hero-btns').forEach((el, index) => {
+        el.style.animationDelay = `${index * 0.2}s`;
+      });
+    </script>
+  </body>
+
+</html>
